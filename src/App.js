@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './form';
+import Output from './output';
 import './App.css';
 
 class App extends React.Component {
@@ -17,7 +18,10 @@ class App extends React.Component {
     const list = this.state.list;
 
     return (
+    <div>
       <Form />
+      <Output person={list[0]} />
+    </div>
     );
   }
 }
