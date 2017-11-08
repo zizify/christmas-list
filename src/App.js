@@ -16,11 +16,13 @@ class App extends React.Component {
   }
   render() {
     const list = this.state.list;
-
+    const people = list.map((person,index) => 
+      <Output person = {person} key = {index} />
+    )
     return (
     <div>
       <Form />
-      <Output person={list[0]} />
+      {people}
     </div>
     );
   }
