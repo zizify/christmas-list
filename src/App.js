@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import Form from './form';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {list: [
+      {name: 'Angela', gifts: ['sweater', 'cat poster']},
+      {name: 'Dwight', gifts: ['beet juicer', 'water backpack']},
+      {name: 'Jim', gifts: ['personalized comic book']},
+      {name: 'Michael', gifts: ['magic set', 'iPod', 'teapot']}
+  ]};
+
+  }
   render() {
+    const list = this.state.list;
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Form />
     );
   }
 }
 
 export default App;
+
