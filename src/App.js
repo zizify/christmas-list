@@ -14,8 +14,8 @@ class App extends React.Component {
   ]};
 }
 
- addPerson(newPerson){
-   this.setState([...this.state.list, newPerson])
+  addPerson(newPerson){
+   this.setState({list: [...this.state.list, newPerson]})
  }
 
   
@@ -26,7 +26,7 @@ class App extends React.Component {
     )
     return (
     <div>
-      <Form onSubmit={(value) => this.addPerson(value)} />
+      <Form createPerson={(value) => this.addPerson(value)} />
       {people}
     </div>
     );
