@@ -12,8 +12,13 @@ class App extends React.Component {
       {name: 'Jim', gifts: ['personalized comic book']},
       {name: 'Michael', gifts: ['magic set', 'iPod', 'teapot']}
   ]};
+}
 
-  }
+ addPerson(newPerson){
+   this.setState([...this.state.list, newPerson])
+ }
+
+  
   render() {
     const list = this.state.list;
     const people = list.map((person,index) => 
@@ -21,7 +26,7 @@ class App extends React.Component {
     )
     return (
     <div>
-      <Form />
+      <Form onSubmit={(value) => this.addPerson(value)} />
       {people}
     </div>
     );
