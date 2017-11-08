@@ -16,8 +16,7 @@ class App extends React.Component {
 
   addPerson(newPerson){
    this.setState({list: [...this.state.list, newPerson]})
- }
-
+  }
   
   render() {
     const list = this.state.list;
