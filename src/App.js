@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './form';
-import Output from './output';
+import Person from './output';
 import './App.css';
 
 class App extends React.Component {
@@ -17,11 +17,21 @@ class App extends React.Component {
   addPerson(newPerson){
    this.setState({list: [...this.state.list, newPerson]})
   }
+
+  removeGift(giftIndex){
+    const indexes = giftIndex.split('-')
+    console.log(indexes)
+    this.setState(this.state.list[Number(indexes[0])].gifts.splice(Number(indexes[1])))
+  }
   
   render() {
     const list = this.state.list;
     const people = list.map((person,index) => 
-      <Output person = {person} key = {index} />
+      <Person 
+        remove={index => this.removeGift(index)} 
+        person={person} key={index}
+        personKey={index}
+      />
     )
     return (
     <div>
