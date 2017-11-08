@@ -1,0 +1,26 @@
+===Components===
+
+APP (stateful)
+- stores state
+- houses setState functions
+- calls the form and output components
+
+FORM (stateless)
+- name input
+- gifts input
+- submit button
+
+OUTPUT (stateless, props for person object)
+- name display
+- gifts display
+# checkbox
+
+
+===LIST===
+
+const LIST = [
+    {name: 'Angela', gifts: ['sweater', 'cat poster']},
+    {name: 'Dwight', gifts: ['beet juicer', 'water backpack']},
+    {name: 'Jim', gifts: ['personalized comic book']},
+    {name: 'Michael', gifts: ['magic set', 'iPod', 'teapot']}
+]
